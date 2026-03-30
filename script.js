@@ -10,6 +10,8 @@ const openAppointmentButtons = [
 ]
 
 function openModal(modal) {
+  appointmentModal.classList.remove('open')
+  doctorModal.classList.remove('open')
   overlay.classList.add('open')
   modal.classList.add('open')
 }
@@ -37,11 +39,49 @@ document.querySelectorAll('[data-close]').forEach(button => {
 
 overlay.addEventListener('click', closeModals)
 
-document.getElementById('appointmentForm').addEventListener('submit', event => {
+const appointmentForm = document.getElementById('appointmentForm')
+const patientName = document.getElementById('patientName')
+const patientPhone = document.getElementById('patientPhone')
+const patientDirection = document.getElementById('patientDirection')
+const patientDate = document.getElementById('patientDate')
+const formMessage = document.getElementById('formMessage')
+
+const today = new Date().toISOString().split('T')[0]
+patientDate.min = today
+
+function isValidPhone(phone) {
+  const clean = phone.replace(/\D/g, '')
+  return clean.length >= 11
+}
+
+appointmentForm.addEventListener('submit', event => {
   event.preventDefault()
-  alert('Заявка отправлена. Мы свяжемся с вами в ближайшее время.')
-  closeModals()
-  event.target.reset()
+  formMessage.classList.remove('success')
+  if (patientName.value.trim().length < 2) {
+    formMessage.textContent = 'Введите корректное имя'
+    return
+  }
+  if (!isValidPhone(patientPhone.value)) {
+    formMessage.textContent = 'Введите корректный номер телефона'
+    return
+  }
+  if (!patientDirection.value) {
+    formMessage.textContent = 'Выберите направление'
+    return
+  }
+  if (!patientDate.value) {
+    formMessage.textContent = 'Выберите дату приёма'
+    return
+  }
+  formMessage.textContent = 'Заявка отправлена. Мы свяжемся с вами в ближайшее время.'
+  formMessage.classList.add('success')
+  setTimeout(() => {
+    closeModals()
+    appointmentForm.reset()
+    patientDate.min = today
+    formMessage.textContent = ''
+    formMessage.classList.remove('success')
+  }, 700)
 })
 
 const chat = document.getElementById('chat')

@@ -153,12 +153,12 @@
     <h3>Запись на приём</h3>
     <form id="appointmentForm">
       <div class="grid-2">
-        <label>Ваше имя<input type="text" required placeholder="Иван Иванов"></label>
-        <label>Телефон<input type="tel" required placeholder="+7 (999) 999-99-99"></label>
+        <label>Ваше имя<input type="text" id="patientName" required minlength="2" placeholder="Иван Иванов"></label>
+        <label>Телефон<input type="tel" id="patientPhone" required placeholder="+7 (999) 999-99-99"></label>
       </div>
       <div class="grid-2">
         <label>Направление
-          <select required>
+          <select id="patientDirection" required>
             <option value="">Выберите направление</option>
             <option>Терапия</option>
             <option>Кардиология</option>
@@ -166,8 +166,9 @@
             <option>Стоматология</option>
           </select>
         </label>
-        <label>Желаемая дата<input type="date" required></label>
+        <label>Желаемая дата<input type="date" id="patientDate" required></label>
       </div>
+      <p class="form-message" id="formMessage"></p>
       <button class="btn form-btn" type="submit">Отправить заявку</button>
     </form>
   </div>
