@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Медикал Плюс</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">Медикал Плюс</div>
+      <nav class="menu">
+        <a href="#about">О клинике</a>
+        <a href="#services">Услуги</a>
+        <a href="#prices">Цены</a>
+        <a href="#doctors">Врачи</a>
+        <a href="#blog">Блог</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <div class="actions">
+        <a class="phone" href="tel:+74951234567">+7 (495) 123-45-67</a>
+        <button class="btn btn-outline" id="cabinetBtn">Кабинет</button>
+        <button class="btn" id="openAppointmentTop">Записаться</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="container hero-inner">
+        <h1>Запишитесь на приём онлайн</h1>
+        <p>Выберите удобное время и врача. Мы свяжемся с вами для подтверждения записи в течение 15 минут.</p>
+        <div class="hero-grid">
+          <div class="hero-item">Быстрая запись за 2 минуты</div>
+          <div class="hero-item">Подтверждение в течение 15 минут</div>
+          <div class="hero-item">SMS-напоминание за день до визита</div>
+          <div class="hero-item">Личный кабинет и история визитов</div>
+        </div>
+        <button class="btn hero-btn" id="openAppointmentHero">Записаться на приём</button>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <h2>Услуги</h2>
+        <div class="service-cards">
+          <article class="card">
+            <h3>Терапия</h3>
+            <p>Диагностика и лечение хронических заболеваний.</p>
+          </article>
+          <article class="card">
+            <h3>Кардиология</h3>
+            <p>Проверка сердца, ЭКГ, консультации кардиолога.</p>
+          </article>
+          <article class="card">
+            <h3>Педиатрия</h3>
+            <p>Наблюдение детей с рождения до 18 лет.</p>
+          </article>
+          <article class="card">
+            <h3>Стоматология</h3>
+            <p>Лечение, эстетика и восстановление зубов.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light" id="doctors">
+      <div class="container">
+        <h2>Наши врачи</h2>
+        <div class="doctors-grid">
+          <article class="doctor">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80" alt="Анна Иванова">
+            <h3>Иванова Анна Сергеевна</h3>
+            <p class="speciality">Терапевт</p>
+            <button class="btn btn-outline small doctor-btn" data-doctor="Иванова Анна Сергеевна">Профиль</button>
+          </article>
+          <article class="doctor">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=80" alt="Дмитрий Петров">
+            <h3>Петров Дмитрий Владимирович</h3>
+            <p class="speciality">Кардиолог</p>
+            <button class="btn btn-outline small doctor-btn" data-doctor="Петров Дмитрий Владимирович">Профиль</button>
+          </article>
+          <article class="doctor">
+            <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=900&q=80" alt="Алексей Козлов">
+            <h3>Козлов Алексей Николаевич</h3>
+            <p class="speciality">Стоматолог</p>
+            <button class="btn btn-outline small doctor-btn" data-doctor="Козлов Алексей Николаевич">Профиль</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="prices">
+      <div class="container">
+        <h2>Наши цены</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Услуга</th>
+                <th>Описание</th>
+                <th>Стоимость</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Консультация терапевта</td><td>Первичный осмотр и сбор анамнеза</td><td>2 000 ₽</td></tr>
+              <tr><td>Повторная консультация</td><td>Контроль и корректировка лечения</td><td>1 500 ₽</td></tr>
+              <tr><td>ЭКГ с расшифровкой</td><td>Диагностика сердечного ритма</td><td>1 200 ₽</td></tr>
+              <tr><td>УЗИ брюшной полости</td><td>Комплексное исследование</td><td>2 800 ₽</td></tr>
+              <tr><td>Общий анализ крови</td><td>Лабораторное исследование</td><td>600 ₽</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light" id="blog">
+      <div class="container">
+        <h2>Блог и статьи</h2>
+        <div class="blog-grid">
+          <article class="post">
+            <img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?auto=format&fit=crop&w=1200&q=80" alt="Кардиология">
+            <span class="post-tag">Кардиология</span>
+            <h3>Кардиолог за 5 минут: что важно знать о давлении</h3>
+            <p>Артериальное давление — один из главных показателей здоровья сердечно-сосудистой системы.</p>
+            <div class="post-meta"><span>Петров Дмитрий</span><span>5 мин</span></div>
+            <button class="post-link blog-open" data-article="cardio">Читать</button>
+          </article>
+          <article class="post">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80" alt="Педиатрия">
+            <span class="post-tag">Педиатрия</span>
+            <h3>Мифы о детском здоровье: развенчиваем заблуждения</h3>
+            <p>Педиатр разбирает популярные мифы о детском здоровье и объясняет, как на самом деле.</p>
+            <div class="post-meta"><span>Сидорова Елена</span><span>7 мин</span></div>
+            <button class="post-link blog-open" data-article="pedi">Читать</button>
+          </article>
+          <article class="post">
+            <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=1200&q=80" alt="Неврология">
+            <span class="post-tag">Неврология</span>
+            <h3>Головная боль: когда пора к врачу?</h3>
+            <p>Невролог объясняет, какие виды головной боли требуют немедленного обращения к врачу.</p>
+            <div class="post-meta"><span>Николаев Сергей</span><span>6 мин</span></div>
+            <button class="post-link blog-open" data-article="neuro">Читать</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contacts" id="contacts">
+      <div class="container">
+        <h2>Контакты</h2>
+        <p class="contacts-text">г. Москва, ул. Тверская, д. 15 · +7 (495) 123-45-67 · Пн-Пт: 8:00-21:00</p>
+        <div class="map-wrap">
+          <iframe src="https://yandex.ru/map-widget/v1/?ll=37.617633%2C55.755864&z=12" title="Яндекс Карта" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Медикал Плюс. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="modal" id="appointmentModal">
+    <button class="close" data-close="appointmentModal">×</button>
+    <h3>Запись на приём</h3>
+    <form id="appointmentForm">
+      <div class="grid-2">
+        <label>Ваше имя<input type="text" id="patientName" required minlength="2" placeholder="Иван Иванов"></label>
+        <label>Телефон<input type="tel" id="patientPhone" required placeholder="+7 (999) 999-99-99"></label>
+      </div>
+      <div class="grid-2">
+        <label>Направление
+          <select id="patientDirection" required>
+            <option value="">Выберите направление</option>
+            <option>Терапия</option>
+            <option>Кардиология</option>
+            <option>Педиатрия</option>
+            <option>Стоматология</option>
+          </select>
+        </label>
+        <label>Желаемая дата<input type="date" id="patientDate" required></label>
+      </div>
+      <p class="form-message" id="formMessage"></p>
+      <button class="btn form-btn" type="submit">Отправить заявку</button>
+    </form>
+  </div>
+
+  <div class="modal" id="doctorModal">
+    <button class="close" data-close="doctorModal">×</button>
+    <h3 id="doctorName">Профиль врача</h3>
+    <p>Высшая категория, стаж более 10 лет. Ведёт приём взрослых и детей. Индивидуальный подход и современные методы лечения.</p>
+    <button class="btn" id="doctorAppointmentBtn">Записаться на приём</button>
+  </div>
+
+  <div class="modal modal-blog" id="blogModal">
+    <button class="close" data-close="blogModal">×</button>
+    <img id="blogModalImage" src="" alt="Статья">
+    <div class="blog-modal-content">
+      <span class="post-tag" id="blogModalTag"></span>
+      <h3 id="blogModalTitle"></h3>
+      <div class="post-meta" id="blogModalMeta"></div>
+      <p id="blogModalLead"></p>
+      <h4>Что важно знать</h4>
+      <ul id="blogModalList"></ul>
+    </div>
+  </div>
+
+  <div class="chat" id="chat">
+    <div class="chat-head">
+      <span>Помощник клиники</span>
+      <button id="chatClose">×</button>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <div class="message">Здравствуйте 👋 Я виртуальный помощник клиники. Могу помочь с ценами, графиком и записью.</div>
+      <div class="chips">
+        <button class="chip">Записаться на приём</button>
+        <button class="chip">Часы работы</button>
+        <button class="chip">Контакты</button>
+      </div>
+    </div>
+    <form class="chat-input" id="chatForm">
+      <input type="text" id="chatText" placeholder="Напишите сообщение..." required>
+      <button type="submit">➤</button>
+    </form>
+  </div>
+
+  <button class="chat-toggle" id="chatToggle">💬</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
