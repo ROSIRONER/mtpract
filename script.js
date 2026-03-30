@@ -1,6 +1,7 @@
 const overlay = document.getElementById('overlay')
 const appointmentModal = document.getElementById('appointmentModal')
 const doctorModal = document.getElementById('doctorModal')
+const blogModal = document.getElementById('blogModal')
 const doctorName = document.getElementById('doctorName')
 
 const openAppointmentButtons = [
@@ -12,6 +13,7 @@ const openAppointmentButtons = [
 function openModal(modal) {
   appointmentModal.classList.remove('open')
   doctorModal.classList.remove('open')
+  blogModal.classList.remove('open')
   overlay.classList.add('open')
   modal.classList.add('open')
 }
@@ -20,6 +22,7 @@ function closeModals() {
   overlay.classList.remove('open')
   appointmentModal.classList.remove('open')
   doctorModal.classList.remove('open')
+  blogModal.classList.remove('open')
 }
 
 openAppointmentButtons.forEach(button => {
@@ -136,4 +139,66 @@ document.querySelectorAll('.chip').forEach(chip => {
     addMessage(text, true)
     setTimeout(() => addMessage(botReply(text)), 300)
   })
+})
+
+const blogArticles = {
+  cardio: {
+    image: 'https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?auto=format&fit=crop&w=1400&q=80',
+    tag: 'Кардиология',
+    title: 'Кардиолог за 5 минут: что важно знать о давлении',
+    meta: ['Петров Дмитрий Владимирович', '10 января 2026', '5 мин'],
+    lead: 'Артериальное давление — один из главных показателей здоровья. Нормой у большинства взрослых считается диапазон около 120/80, но важна не одна цифра, а динамика.',
+    list: [
+      'Измеряйте давление в спокойном состоянии, после 5 минут отдыха.',
+      'Записывайте утренние и вечерние показатели 7 дней подряд.',
+      'Обратитесь к врачу, если давление регулярно выше 140/90 или ниже 90/60.'
+    ]
+  },
+  pedi: {
+    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1400&q=80',
+    tag: 'Педиатрия',
+    title: 'Мифы о детском здоровье: развенчиваем заблуждения',
+    meta: ['Сидорова Елена Викторовна', '12 января 2026', '7 мин'],
+    lead: 'Вокруг детского здоровья много мифов. Важно опираться на доказательную медицину и индивидуальные рекомендации вашего педиатра.',
+    list: [
+      'Температуру до 38,5 не всегда нужно сбивать сразу, если ребёнок активен.',
+      'Антибиотики не лечат вирусные инфекции и назначаются только врачом.',
+      'Профилактические осмотры помогают выявить проблемы на раннем этапе.'
+    ]
+  },
+  neuro: {
+    image: 'https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=1400&q=80',
+    tag: 'Неврология',
+    title: 'Головная боль: когда пора к врачу?',
+    meta: ['Николаев Сергей Андреевич', '15 января 2026', '6 мин'],
+    lead: 'Большинство головных болей неопасны, но есть признаки, когда откладывать визит нельзя. Особенно если боль необычная или резко усиливается.',
+    list: [
+      'Срочно обратитесь за помощью при внезапной сильной боли «как удар».',
+      'Если боль сопровождается онемением, нарушением речи или зрения — нужна срочная диагностика.',
+      'При частых приступах ведите дневник и покажите его неврологу.'
+    ]
+  }
+}
+
+const blogModalImage = document.getElementById('blogModalImage')
+const blogModalTag = document.getElementById('blogModalTag')
+const blogModalTitle = document.getElementById('blogModalTitle')
+const blogModalMeta = document.getElementById('blogModalMeta')
+const blogModalLead = document.getElementById('blogModalLead')
+const blogModalList = document.getElementById('blogModalList')
+
+function openBlogArticle(key) {
+  const article = blogArticles[key]
+  if (!article) return
+  blogModalImage.src = article.image
+  blogModalTag.textContent = article.tag
+  blogModalTitle.textContent = article.title
+  blogModalMeta.innerHTML = article.meta.map(item => `<span>${item}</span>`).join('')
+  blogModalLead.textContent = article.lead
+  blogModalList.innerHTML = article.list.map(item => `<li>${item}</li>`).join('')
+  openModal(blogModal)
+}
+
+document.querySelectorAll('.blog-open').forEach(button => {
+  button.addEventListener('click', () => openBlogArticle(button.dataset.article))
 })

@@ -122,9 +122,30 @@
       <div class="container">
         <h2>Блог и статьи</h2>
         <div class="blog-grid">
-          <article class="post"><h3>Кардиолог за 5 минут</h3><p>Что важно знать об артериальном давлении.</p></article>
-          <article class="post"><h3>Мифы о детском здоровье</h3><p>Разбор популярных заблуждений от педиатра.</p></article>
-          <article class="post"><h3>Головная боль</h3><p>Когда пора обратиться к неврологу.</p></article>
+          <article class="post">
+            <img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?auto=format&fit=crop&w=1200&q=80" alt="Кардиология">
+            <span class="post-tag">Кардиология</span>
+            <h3>Кардиолог за 5 минут: что важно знать о давлении</h3>
+            <p>Артериальное давление — один из главных показателей здоровья сердечно-сосудистой системы.</p>
+            <div class="post-meta"><span>Петров Дмитрий</span><span>5 мин</span></div>
+            <button class="post-link blog-open" data-article="cardio">Читать</button>
+          </article>
+          <article class="post">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80" alt="Педиатрия">
+            <span class="post-tag">Педиатрия</span>
+            <h3>Мифы о детском здоровье: развенчиваем заблуждения</h3>
+            <p>Педиатр разбирает популярные мифы о детском здоровье и объясняет, как на самом деле.</p>
+            <div class="post-meta"><span>Сидорова Елена</span><span>7 мин</span></div>
+            <button class="post-link blog-open" data-article="pedi">Читать</button>
+          </article>
+          <article class="post">
+            <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=1200&q=80" alt="Неврология">
+            <span class="post-tag">Неврология</span>
+            <h3>Головная боль: когда пора к врачу?</h3>
+            <p>Невролог объясняет, какие виды головной боли требуют немедленного обращения к врачу.</p>
+            <div class="post-meta"><span>Николаев Сергей</span><span>6 мин</span></div>
+            <button class="post-link blog-open" data-article="neuro">Читать</button>
+          </article>
         </div>
       </div>
     </section>
@@ -178,6 +199,19 @@
     <h3 id="doctorName">Профиль врача</h3>
     <p>Высшая категория, стаж более 10 лет. Ведёт приём взрослых и детей. Индивидуальный подход и современные методы лечения.</p>
     <button class="btn" id="doctorAppointmentBtn">Записаться на приём</button>
+  </div>
+
+  <div class="modal modal-blog" id="blogModal">
+    <button class="close" data-close="blogModal">×</button>
+    <img id="blogModalImage" src="" alt="Статья">
+    <div class="blog-modal-content">
+      <span class="post-tag" id="blogModalTag"></span>
+      <h3 id="blogModalTitle"></h3>
+      <div class="post-meta" id="blogModalMeta"></div>
+      <p id="blogModalLead"></p>
+      <h4>Что важно знать</h4>
+      <ul id="blogModalList"></ul>
+    </div>
   </div>
 
   <div class="chat" id="chat">

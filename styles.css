@@ -156,8 +156,9 @@ body {
 .card, .post {
   background: var(--card);
   border-radius: 16px;
-  padding: 22px;
+  padding: 0;
   box-shadow: 0 10px 30px rgba(15,45,60,.08);
+  overflow: hidden;
 }
 
 .card h3, .post h3 {
@@ -169,6 +170,59 @@ body {
   margin: 0;
   color: var(--muted);
   font-size: 22px;
+}
+
+.card {
+  padding: 22px;
+}
+
+.post img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.post-tag {
+  display: inline-block;
+  margin: 16px 18px 10px;
+  background: #dbedf7;
+  color: var(--primary);
+  border-radius: 20px;
+  padding: 7px 14px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.post h3, .post p, .post-meta, .post-link {
+  margin-left: 18px;
+  margin-right: 18px;
+}
+
+.post h3 {
+  min-height: 90px;
+}
+
+.post p {
+  min-height: 84px;
+}
+
+.post-meta {
+  display: flex;
+  gap: 16px;
+  color: #718391;
+  font-size: 17px;
+  margin-top: 14px;
+  margin-bottom: 12px;
+}
+
+.post-link {
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 24px;
+  padding: 0 0 18px;
+  cursor: pointer;
 }
 
 .doctors-grid {
@@ -295,6 +349,48 @@ th, td {
   margin: 0 0 18px;
   font-size: 36px;
   color: var(--primary);
+}
+
+.modal-blog {
+  width: min(980px, 92%);
+  max-height: 88vh;
+  overflow: auto;
+  padding: 20px;
+}
+
+.modal-blog img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.blog-modal-content {
+  padding: 8px 4px 4px;
+}
+
+.blog-modal-content h3 {
+  margin: 10px 0 10px;
+}
+
+.blog-modal-content p {
+  font-size: 22px;
+  color: #5f7381;
+  line-height: 1.45;
+}
+
+.blog-modal-content h4 {
+  font-size: 30px;
+  margin: 22px 0 10px;
+  color: var(--primary);
+}
+
+.blog-modal-content ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #496271;
+  font-size: 21px;
+  line-height: 1.5;
 }
 
 .close {
@@ -481,6 +577,12 @@ input, select {
   .hero-grid, .service-cards, .blog-grid, .grid-2 {
     grid-template-columns: 1fr;
   }
+  .post h3 {
+    min-height: auto;
+  }
+  .post p {
+    min-height: auto;
+  }
   .chat {
     width: calc(100% - 20px);
     right: 10px;
@@ -491,5 +593,11 @@ input, select {
   }
   input, select {
     font-size: 16px;
+  }
+  .blog-modal-content h4 {
+    font-size: 24px;
+  }
+  .blog-modal-content ul {
+    font-size: 18px;
   }
 }
